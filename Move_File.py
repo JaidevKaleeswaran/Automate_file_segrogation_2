@@ -9,13 +9,14 @@ list_of_files = os.listdir(from_dir)
 
 for i in list_of_files:
     name, extension = os.path.splitext(i)
+    # print(name, extension)
 
     if extension == '':
         continue
-    if extension == [ '.txt', '.doc', '.docx' , '.pdf']:
-        path1 = from_dir + '/' + name
+    if extension in [ '.txt', '.doc', '.docx' , '.pdf']:
+        path1 = from_dir + '/' + i
         path2 = to_dir + '/' + "Document_Files"
-        path3 = to_dir + '/' + "Document_Files" + '/' + name
+        path3 = to_dir + '/' + "Document_Files" + '/' + i
 
         if os.path.exists(path2):
             print("Moving" + name + "...")
